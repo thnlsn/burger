@@ -1,5 +1,43 @@
-//first require the mysql module from node
-var mysql = require("mysql");
+//this file will hold all mysql connection data
+
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'JoeKerr!',
+    database: 'burgers_db'
+});
+
+connection.connect((err) => {
+    if(err) throw(err);
+    console.log(`Connected as ID: ${connection.threadId}`);
+});
+
+//exporting the basic mysql connection to orm.js
+module.exports = connection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* var mysql = require("mysql");
 
 let connection = mysql.createConnection({
     host: 'localhost',
@@ -19,4 +57,4 @@ connection.connect((err) => {
     }
 });
 
-module.exports = connection;
+module.exports = connection; */

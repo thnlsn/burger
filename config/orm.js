@@ -1,4 +1,59 @@
+//this file will hold all the methods we will be able to do with the mysql data
+console.log(`orm`);
 const connection = require('./connection.js');
+
+//
+const orm = {
+    //cb is a callback used to pass the result from the query into the nest file, burger,js in the MODELS folder
+    all: (tableInput, cb) => {
+        connection.query(`SELECT * FROM ${tableInput};`, (err, result) => {
+            if (err) throw (err);
+            cb(result)
+        })
+    }
+}
+
+module.exports = orm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const connection = require('./connection.js');
 
 let tableName = 'burgers';
 
@@ -37,7 +92,7 @@ let orm = {
 };
 
 //IM SO CONFUSED
-module.exports = orm;
+module.exports = orm; */
 
 
 
