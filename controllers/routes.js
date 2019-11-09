@@ -8,10 +8,17 @@ const burger = require('../models/burger.js');
 
 //base route at / that sends a response of index in VIEWS folder
 router.get('/', (req, res) => {
-    burger.all((burgerData) => {
-        console.log(burgerData);
-        res.render('index', {burgerData});
+    burger.all((burger_data) => {
+        console.log(burger_data);
+        res.render('index', {burger_data});
     });
+})
+
+router.put('/burgers/update', (req, res) => {
+    burger.update(req.body.burger_id, (result) => {
+        console.log(result);
+        res.redirect('/');
+    })
 })
 
 //this allows the routes to be seen and used by server.js
