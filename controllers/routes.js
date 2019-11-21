@@ -1,4 +1,3 @@
-console.log(`routes`);
 
 //reference to express and router
 const express = require('express');
@@ -18,8 +17,8 @@ router.put('/burgers/update', (req, res) => {
     burger.update(req.body.burger_id, (result) => {
         console.log(result);
         res.redirect('/');
-    })
-})
+    });
+});
 
 //this allows the routes to be seen and used by server.js
 module.exports = router;

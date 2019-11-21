@@ -1,5 +1,4 @@
 //this file will hold all the methods we will be able to do with the mysql data
-console.log(`orm`);
 const connection = require('./connection.js');
 
 //
